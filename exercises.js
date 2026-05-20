@@ -1,3 +1,5 @@
+import { time } from "console";
+import { json } from "stream/consumers";
 import { fileURLToPath } from "url";
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
@@ -40,7 +42,16 @@ function exercise_01() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let string = "This is a string.";
+  let number = 10;
+  let boolean = true;
+  let object = {obj: "this is an object"};
+  let undefined;
+  console.log(typeof string);
+  console.log(typeof number);
+  console.log(typeof boolean);
+  console.log(typeof object);
+  console.log(typeof undefined);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -60,7 +71,10 @@ function exercise_02() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let num = 10;
+  let numString = String(num);
+  console.log(numString);
+  console.log(typeof numString);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -82,7 +96,10 @@ function exercise_03() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let boolZero = Boolean(0);
+  let boolOne = Boolean(1);
+  console.log(boolZero);
+  console.log(boolOne);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -101,7 +118,8 @@ function exercise_04() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let notNum = Number("not a number");
+  console.log(isNaN(notNum));
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -122,7 +140,9 @@ function exercise_05() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let age = 29;
+  let templateLit = `I am ${age} years old`;
+  console.log(templateLit);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -148,7 +168,10 @@ function exercise_06() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let newString = name + " has " + number + " apples";
+  console.log(newString);
+  let templateLit = `${name} has ${number} apples`;
+  console.log(templateLit);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -166,7 +189,15 @@ function exercise_07() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let jsObject = {
+    album: "Dirty Computer",
+    artist: "Janelle Monae",
+    released: new Date("April 27, 2018"),
+    genre: "Pop, funk, hip-hop, R&B, neo soul"
+  };
+
+  let convertJSON = JSON.stringify(jsObject);
+  console.log(convertJSON);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -189,7 +220,8 @@ function exercise_08() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let parsed = JSON.parse(jsonStringToParse);
+  console.log(parsed.name);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -209,7 +241,10 @@ function exercise_09() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let numPi = 3.14159
+  console.log(`Rounded: ${Math.round(numPi)}`);
+  console.log(`Ceiling: ${Math.ceil(numPi)}`);
+  console.log(`Floor: ${Math.floor(numPi)}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -229,7 +264,8 @@ function exercise_10() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let numPi = 3.14159;
+  console.log(`Rounded: ${numPi.toFixed(2)}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -251,7 +287,10 @@ function exercise_11() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let largeNum = 31415926.53;
+  let usFormat = new Intl.NumberFormat('en-US');
+  let formattedNum = usFormat.format(largeNum);
+  console.log(`Formatted Number: ${formattedNum}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -276,7 +315,10 @@ function exercise_12() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let salary = 80000;
+  let usFormat = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"});
+  let formattedSalary = usFormat.format(salary);
+  console.log(`Formatted Salary: ${formattedSalary}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -301,7 +343,10 @@ function exercise_13() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let salary = 100000;
+  let japFormat = new Intl.NumberFormat("ja-JP", {style: "currency", currency: "JPY"});
+  let formattedSalary = japFormat.format(salary);
+  console.log(`Formatted Salary: ${formattedSalary}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -321,7 +366,9 @@ function exercise_14() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let dateObject = new Date("1996-07-05T22:25:00-05:00");
+  console.log(`Date String: ${dateObject.toDateString()}`);
+  console.log( `Time String: ${dateObject.toTimeString()}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -343,7 +390,9 @@ function exercise_15() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let dateObject = new Date("1996-07-05T22:25:00-05:00");
+  console.log(`US Date String: ${dateObject.toLocaleDateString("en-US")}`);
+  console.log( `GB Date String: ${dateObject.toLocaleDateString("en-GB")}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -361,7 +410,12 @@ function exercise_16() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  try {
+    let invalidJSON = JSON.parse("This should not work");
+  } 
+  catch (error) {
+    console.log(`Error message: ${error.message}`);
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -378,7 +432,9 @@ function exercise_17() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let bool = true;
+  let boolString = String(bool);
+  console.log(boolString);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -414,7 +470,15 @@ function exercise_18() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let bigNum = 3141592.65;
+
+  let usFormat = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"});
+  let rusFormat = new Intl.NumberFormat("ru-RU", {style: "currency", currency: "RUB"});
+  let japFormat = new Intl.NumberFormat("ja-JP", {style: "currency", currency: "JPY"});
+
+  console.log(`US Currency: ${usFormat.format(bigNum)}`);
+  console.log(`RUS Currency: ${rusFormat.format(bigNum)}`);
+  console.log(`JAP Currency: ${japFormat.format(bigNum)}`);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -436,7 +500,11 @@ function exercise_19() {
 
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code in this space";
+  let currentDate = new Date();
+  let futureDate = new Date(2027, 6, 5)
+  let timeDiff = futureDate - currentDate;
+  let dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+  console.log(dayDiff);
 
   // CODE IN THE OPEN LINES ABOVE
 }
